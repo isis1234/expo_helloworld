@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Constants } from 'expo';
+// import { DrawerNavigator} from 'react-native';
 
 // You can import from local files
 import AssetExample from './components/AssetExample';
