@@ -6,7 +6,6 @@ import { Card } from 'react-native-elements'; // 0.19.1
 import moment from 'moment';
 import { Constants } from 'expo';
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
-//import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class LoginPage extends React.Component {
   //====FRONTEND====
