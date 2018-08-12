@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, Button, TextInput, Alert } from 'react-native';
+import moment from 'moment'; // 2.18.1
 
 export default class LoginPage extends React.Component {
   _btn_login(){
@@ -54,10 +55,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#abcdef',
-    autoCapitalize: 'none',
-    autoCorrect: false,
-    clearTextOnFocus: true,
-    keyboardType: 'decimal-pad'
   },
   password_input:{
     width:200,
@@ -66,10 +63,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#abcdef',
-    autoCapitalize: 'none',
-    autoCorrect: false,
-    clearTextOnFocus: true,
-    secureTextEntry: true
   },
   button:{
     width: 260,
