@@ -1,14 +1,26 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, Button, TextInput, Alert } from 'react-native';
-import { Card, Input } from 'react-native-elements'; // Version can be specified in package.json
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {  Text, View, StyleSheet, Image, Button, TextInput, Alert, 
+          KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard,
+          Platform, ScrollView } from 'react-native';
+import { Card } from 'react-native-elements'; // 0.19.1
+import moment from 'moment';
+import { Constants } from 'expo';
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
+//import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class LoginPage extends React.Component {
   //====FRONTEND====
   render() {
     return (
-      <View>
-        <Card title='Login'>
+      <KeyboardAwareScrollView
+        style={styles.container}
+        enableOnAndroid
+        extraHeight={Platform.OS === "android" ? 10 : undefined}
+        innerRef={ref => {this.scroll = ref}}
+        scrollEnabled={true}
+      >
+        
+        <Card title={moment().format('DD MMM, YYYY HH:mm')}>
           <View style={styles.groupContainer}>
             <Image
               style={styles.logo} 
@@ -21,57 +33,50 @@ export default class LoginPage extends React.Component {
               placeholder="Username" 
               keyboardType="email-address"
               autoCapitalize="none"
-              autoCorrect="false"
+              autoCorrect={false}
             />
             <TextInput 
               style={styles.textinput} 
               placeholder="Password"
-              keyboardType="email-address"
-              secureTextEntry="true"
               autoCapitalize="none"
-              autoCorrect="false"
+              secureTextEntry={true}
+              autoCorrect={false}
             />
           </View>
-          
-          <View style={styles.inLine}>
-            <Button 
-              style={styles.button}
-              title="Login" 
-              onPress={this._btn_login}
-            />
-            {
-              // <Icon
-              //   name='user'
-              //   size={24}
-              //   color='black'
-              // />
-            }
+          <View style={[styles.groupContainer, styles.inLine]}>
             <Button 
               style={styles.button}
               title="Sign Up" 
               onPress={this._btn_signup}
             />
+            <Button 
+              style={styles.button}
+              title="Login" 
+              onPress={this._btn_login}
+            />
           </View>
         </Card>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 
   //====BACKEND====
   _btn_login(){
-    Alert.alert('Login Success~');
+    Alert.alert('Login Success\n~');
   }
   _btn_signup(){
     Alert.alert('Sign Up Success~');
   }
-
-
-
-
-
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
   groupContainer:{
     alignItems: 'center',
     marginBottom: 24,
@@ -87,7 +92,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 20,
     borderColor: '#ecf0f1',
-    textBreakStrategy: 'balanced'
+    textBreakStrategy: 'balanced',
   },
   button:{
     width: 260,
