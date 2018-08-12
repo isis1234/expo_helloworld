@@ -1,7 +1,7 @@
 {
-  "name": "first_app",
+  "name": "github.com/isis1234/expo_helloworld",
   "version": "0.0.0",
-  "description": "testing",
+  "description": "isis1234/expo_helloworld @ Aug 12, 2018",
   "author": null,
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
@@ -9,6 +9,7 @@
     "expo": "^29.0.0",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
+    "@expo/vector-icons": "latest",
     "react-native-elements": "0.19.1"
   }
 }
