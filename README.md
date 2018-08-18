@@ -1,9 +1,11 @@
 # Expo Example Template
 	- Navigation Bar
 	- Login Page
+	- Calculator
 
 # TBC
-	- Calculator
 	- Google Map
-	- Login: Social Login
-	- OO
+	- Timer
+	- Login Enh.: Social Login
+	- Simple Modularize
+	- Multi Lang

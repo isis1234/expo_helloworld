@@ -4,7 +4,7 @@
     "description": "isis1234/expo_helloworld @ Aug 13, 2018",
     "slug": "snack-SkNG1eRHm",
     "privacy": "unlisted",
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "29.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
@@ -22,7 +22,11 @@
       ]
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.yourappname"
+    },
+    "android":{
+      "package":"com.yourcompany.yourappname"
     }
   }
 }

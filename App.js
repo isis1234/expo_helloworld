@@ -1,22 +1,20 @@
 import * as React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import {  } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { DrawerNavigator } from 'react-navigation'; // 1.0.0-beta.14
-
+import { DrawerNavigator } from 'react-navigation';
 // You can import from local files
-import LoginPage from './components/LoginPage';
+import Login from './components/LoginPage';
 import AssetExample from './components/AssetExample';
+import Calculator from './components/Calculator';
 
 // Drawer navigation bar
 const RootDrawer = DrawerNavigator({
-  loginPage: {
-    screen: () => (<LoginPage />),
+  calculator: {
+    screen:  () => (<Calculator />),
     navigationOptions: {
-      drawerLabel: ({ tintColor, focused }) => (
-        'Login'
-      ),
+      drawerLabel: 'Calculator',
       drawerIcon: ({ tintColor, focused }) => (
-        <Icon name="sign-in" size={30} color={focused?"#4787ed":"#000000"} />
+        <Icon name="calculator" size={25} color={focused?"#4787ed":"#000000"} />
       ),
     },
   },
@@ -25,10 +23,21 @@ const RootDrawer = DrawerNavigator({
     navigationOptions: {
       drawerLabel: 'AssetExample',
       drawerIcon: ({ tintColor, focused }) => (
-        <Icon name="rocket" size={30} color={focused?"#4787ed":"#000000"} />
+        <Icon name="rocket" size={25} color={focused?"#4787ed":"#000000"} />
       ),
     },
-  }
+  },
+  loginPage: {
+    screen: () => (<Login />),
+    navigationOptions: {
+      drawerLabel: ({ tintColor, focused }) => (
+        'Login'
+      ),
+      drawerIcon: ({ tintColor, focused }) => (
+        <Icon name="sign-in" size={25} color={focused?"#4787ed":"#000000"} />
+      ),
+    },
+  },
 });
 
 export default RootDrawer;
